@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this replication workflow, please cite it and the underlying study."
+title: "Colombia Education CCT Replication"
+type: software
+authors:
+  - family-names: Horvitz
+    given-names: Miguel Camacho
+date-released: 2026-08-18
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Barrera-Osorio
+      given-names: Felipe
+    - family-names: Bertrand
+      given-names: Marianne
+    - family-names: Linden
+      given-names: Leigh L.
+    - family-names: Perez-Calle
+      given-names: Francisco
+  title: "Improving the Design of Conditional Transfer Programs: Evidence from a Randomized Education Experiment in Colombia"
+  journal: American Economic Journal: Applied Economics
+  year: 2011
+  volume: 3
+  issue: 2
+  pages: 167-195
+  doi: 10.1257/app.3.2.167

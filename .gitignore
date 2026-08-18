@@ -1,2 +1,14 @@
-*.DS_Store
+.DS_Store
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+renv/library/
+renv/staging/
+outputs/
 
+# Raw inputs are downloaded locally from the official archive; never commit
+# them, including the authors' replication package.
+!data/
+!data/README.md
+data/raw/
