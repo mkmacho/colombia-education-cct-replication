@@ -1,0 +1,14 @@
+Package: colombiaeducationcctreplication
+Type: Project
+Title: Reproducible Baseline Replication of a Colombian CCT Experiment
+Version: 0.1.0
+Description: Reproduces a transparent subset of the published attendance regressions
+    using the authors' official replication data. The legacy machine-learning scripts
+    are retained for historical reference but are not the canonical workflow.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.2)
+Imports:
+    haven,
+    lmtest,
+    sandwich

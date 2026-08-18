@@ -1,8 +1,52 @@
-# Replication package for ”Improving the Design of Conditional Transfer Programs: Evidence from a Randomized Education Introduction Experiment in Colombia”
+# Replicating Treatment Effects in a Colombian Cash-Transfer Experiment
 
+This repository reproduces a transparent baseline subset of the attendance
+analysis in Barrera-Osorio, Bertrand, Linden, and Perez-Calle (2011), *Improving
+the Design of Conditional Transfer Programs: Evidence from a Randomized Education
+Experiment in Colombia*.
 
-## Introduction
+The canonical workflow uses the authors' official replication package, applies
+published sample restrictions, estimates treatment coefficients with
+school-clustered HC1 standard errors, and writes a tidy CSV plus run metadata.
 
-Barrera-Osorio et al. (2011) conduct an experimental evaluation of different conditional cash transfer (CCT) programs designed to incentivize academic participation in Colombia. In particular, the authors compare three different treatment branches: a standard (or ”basic” treatment) design similarly to the well-known PROGRESA1 program, a ”savings” treatment wherein one-third of funds are distributed in a lump-sum prior to students’ re-enrollment dates, and a ”tertiary” treatment which guarantees a large payment upon gradua- tion, directly incentivizing secondary school graduation and enrollment in tertiary institutions.
+## Run it
 
-In this study, we will replicate the results from Barrera-Osorio et al. (2011). We have chosen to study this experiment in particular for multiple reasons. At a high level, we are strongly interested in education and development, especially in the context of Latin America. Moreover, with respect to the aim of this course, we believe this experiment contains several desirable characteristics. Notably, the presence of three different treatments arms allows us to explore heterogeneity in multiple settings with different motivations, resulting in more meaningful policy conclusions. In addition, the availability of monitored as well as self-reported outcome data allows us to identify systematic biases in survey answers which could obscure heterogeneity in treatment effects. Finally, the authors’ own heterogeneity analysis is rather limited, with parametric assump- tions naturally restricting and potentially biasing our understanding. With this in mind, we intend to use machine learning methods to explore and uncover treatment effect heterogeneity in an unrestricted and systematic fashion (principled data snooping, if you will).
+1. Read [data/README.md](data/README.md), download the official package, and
+   unpack it into the documented local path.
+2. Restore the declared R dependencies with `renv::restore()`.
+3. Run:
+
+   ```sh
+   Rscript scripts/replicate_tables.R
+   ```
+
+4. With the official package present, verify the deterministic regression
+   checks:
+
+   ```sh
+   Rscript tests/test_replication.R
+   ```
+
+The outputs are written to `outputs/` and deliberately ignored by Git.
+
+## Scope and limits
+
+This is a reproducible baseline replication, not an exact reproduction of every
+published table. The legacy `legacy/analysis.R`, `legacy/replication.R`, and
+`legacy/report.pdf` are
+preserved as historical course-work artifacts; they are not the supported entry
+point because they install packages while running, rely on a personal absolute
+path, and depend on an unavailable local data file.
+
+The historical ML analysis should be rebuilt only after this baseline is compared
+numerically with the authors' supplied Stata programs. Any extension should set
+and report random seeds, preserve the paper's treatment/sample definitions, and
+separate exploratory heterogeneity analysis from confirmatory replication.
+
+## References
+
+- Article: [American Economic Association](https://www.aeaweb.org/articles?id=10.1257/app.3.2.167).
+- Data: [openICPSR project E113783, version V1](https://doi.org/10.3886/E113783V1).
+
+See [NOTICE.md](NOTICE.md) for third-party material and data terms, and
+[CITATION.cff](CITATION.cff) for citation metadata.
